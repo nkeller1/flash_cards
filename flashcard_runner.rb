@@ -39,10 +39,7 @@ def start
 
   def results
     puts "****** Game Over! ******"
-    # require "pry"; binding.pry
     puts "You had #{@round.number_correct} correct guesses out of #{@round.turns.count} for a total score of #{@round.percent_correct}%."
-    # puts "Geography - #{@round.percent_correct_by_category(:Geography)}% correct"
-    # puts "STEM - #{@round.percent_correct_by_category(:STEM)}% correct"
     @round.card_category
   end
 end

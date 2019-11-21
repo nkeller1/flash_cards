@@ -1,6 +1,6 @@
 
 class CardGenerator
-  
+
   def initialize(file_path)
     @file_path = file_path
   end
@@ -18,12 +18,4 @@ class CardGenerator
       end
     game
   end
-
-  # def card
-  #   File.open("#{file_path}", "r") do |row|
-  #     row.each_line do |line|
-  #     puts line
-  #     end
-  #   end
-  # end
 end
