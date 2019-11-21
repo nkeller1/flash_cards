@@ -15,4 +15,8 @@ class CardGeneratorTest < Minitest::Test
   def test_it_exists
     assert_instance_of CardGenerator, @cardgenerator
   end
+
+  def test_it_creates_cards
+    assert_equal 4, @cardgenerator.cards.length
+  end
 end

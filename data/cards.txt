@@ -1,5 +1,5 @@
 question,answer,category
 What is 5 + 5?,10,STEM
-What is Rachel's favorite animal?,red panda,Turing Staff
-What is Mike's middle name?,nobody knows,Turing Staff
-What cardboard cutout lives at Turing?,Justin bieber,PopCulture
+What animal is human kinds best friend?,Dog,Fluffy Things
+What is the capital of Alaska?,Juneau,Geography
+What country encompasses more than 250 islands?,Indonesia,Geography

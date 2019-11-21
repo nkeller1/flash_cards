@@ -1,22 +1,21 @@
 
 class CardGenerator
 
-  def initialize(cards)
+  def initialize(file_path)
+    @file_path = file_path
   end
 
-  def cards(file_path)
+  def cards
     game = []
-      File.foreach("#{file_path}", headers: true) do |row|
-        game << Card_Reader.new(row)
+      File.open(@file_path, headers: true) do |row|
+        row.to_a[1..-1].each do |card_info|
+          info = card_info.chomp.split(',')
+          question = info[0]
+          answer = info[1]
+          category = info[2].to_sym
+          game << Card.new(question, answer, category)
+        end
       end
     game
-  end
-
-  def card
-    File.open("#{file_path}", "r") do |row|
-      row.each_line do |line|
-      puts line
-      end
-    end
   end
 end

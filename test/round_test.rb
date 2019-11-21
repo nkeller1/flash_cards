@@ -4,6 +4,7 @@ require './lib/card'
 require './lib/turn'
 require './lib/deck'
 require './lib/round'
+require 'mocha/minitest'
 
 class RoundTest < Minitest::Test
 
@@ -43,6 +44,15 @@ class RoundTest < Minitest::Test
     assert_equal 1, @round.turns.count
   end
 
+  def test_recall_deck_fills
+    assert_equal [], @round.recall_deck
+    @round.take_turn("Juneau")
+    @round.take_turn("Mars")
+    @round.take_turn("West")
+    @round.take_turn("Indonesia")
+    assert_equal [@card_1, @card_2, @card_3, @card_4], @round.recall_deck
+  end
+
   def test_number_correct
     @round.take_turn("Juneau")
     assert_equal 1, @round.number_correct
@@ -75,6 +85,15 @@ class RoundTest < Minitest::Test
     assert_equal 1, @round.total_cards_per_category(:Geography)
     assert_equal 2, @round.total_cards_per_category(:STEM)
     assert_equal 0, @round.total_cards_per_category("POP Culture")
+  end
+
+  def test_card_category
+    @round.take_turn("Juneau")
+    @round.take_turn("Mars")
+    @round.take_turn("West")
+    @round.take_turn("Indonesia")
+    @round.stubs(:card_category).returns([@card_1, @card_2, @card_3, @card_4])
+    assert_equal [@card_1, @card_2, @card_3, @card_4], @round.card_category
   end
 
   def test_percent_correct_by_category

@@ -8,13 +8,8 @@ require './lib/cardgenerator'
 
 
   @round = Round.new(
-  @deck = Deck.new([
-  # @cards = CardGenerator.newCardGenerator.new('./data/cards.txt').cards
-  @card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography),
-  @card_2 = Card.new("The Viking spacecraft sent back to Earth photographs and reports about the surface of which planet?", "Mars", :STEM),
-  @card_3 = Card.new("What planet is furthest from the sun?", "Uranus", :STEM),
-  @card_4 = Card.new("What is the name of the country that encompasses more than 250 islands?", "Indonesia", :Geography)
-  ]))
+  @deck = Deck.new(
+  @cards = CardGenerator.new('./data/cards.txt').cards))
 
 
 def start
@@ -39,8 +34,7 @@ def start
   def results
     puts "****** Game Over! ******"
     puts "You had #{@round.number_correct} correct guesses out of #{@round.turns.count} for a total score of #{@round.percent_correct}%."
-    puts "Geography - #{@round.percent_correct_by_category(:Geography)}% correct"
-    puts "STEM - #{@round.percent_correct_by_category(:STEM)}% correct"
+    @round.card_category
   end
 end
 
