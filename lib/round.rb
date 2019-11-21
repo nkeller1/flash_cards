@@ -4,6 +4,7 @@ class Round
   def initialize(deck)
     @deck = deck
     @turns = []
+    @recall_deck = []
   end
 
   def current_card
@@ -13,7 +14,7 @@ class Round
   def take_turn(guess)
     new_turn = Turn.new(guess, current_card)
     @turns << new_turn
-    deck.cards.shift
+    @recall_deck << deck.cards.shift
     new_turn
   end
 
@@ -41,7 +42,17 @@ class Round
     total_cards = turns.find_all do |turn|
       turn.card.category == category
     end
-    total_cards.count
+    total_cards.count.to_i
+  end
+
+  def card_category
+    unique_cards = @recall_deck.uniq do |card|
+      card.category
+    end
+    unique_cards.each do |card|
+      puts "#{card.category.to_s} - #{percent_correct_by_category(card.category)}"
+    end
+
   end
 
   def percent_correct_by_category(category)

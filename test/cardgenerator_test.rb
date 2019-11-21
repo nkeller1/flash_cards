@@ -5,7 +5,6 @@ require './lib/turn'
 require './lib/deck'
 require './lib/round'
 require './lib/cardgenerator'
-require './lib/card_reader'
 
 class CardGeneratorTest < Minitest::Test
 
@@ -18,7 +17,6 @@ class CardGeneratorTest < Minitest::Test
   end
 
   def test_it_creates_cards
-
-    assert_equal [], @cardgenerator.cards('./data/cards.txt')
+    assert_equal 4, @cardgenerator.cards.length
   end
 end
