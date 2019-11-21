@@ -9,7 +9,6 @@ require 'mocha/minitest'
 class RoundTest < Minitest::Test
 
   def setup
-    #refactor opp
     @round = Round.new(
     @deck = Deck.new([
     @card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography),

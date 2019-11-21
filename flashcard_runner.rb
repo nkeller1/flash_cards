@@ -11,13 +11,14 @@ require './lib/cardgenerator'
   @deck = Deck.new(
   @cards = CardGenerator.new('./data/cards.txt').cards))
 
+# issue with answers with two words
 
 def start
   puts "-" *50
-  puts "Welcome! You're playing with #{@round.deck.count} cards."
-  until @round.turns.count == 4
+  puts "Welcome! You're playing with #{@round.deck.cards.count} cards."
+  until @round.deck.cards.empty? == true
     puts "-" *50
-    puts "This is card number #{@round.turns.count + 1} out of 4."
+    puts "This is card number #{@round.turns.count + 1} out of 5."
     puts "Question: #{@round.current_card.question}"
     puts "-" *50
     puts "Type your answer below the line:"

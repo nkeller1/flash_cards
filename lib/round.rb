@@ -52,7 +52,6 @@ class Round
     unique_cards.each do |card|
       puts "#{card.category.to_s} - #{percent_correct_by_category(card.category)}"
     end
-
   end
 
   def percent_correct_by_category(category)
