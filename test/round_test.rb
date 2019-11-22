@@ -86,15 +86,6 @@ class RoundTest < Minitest::Test
     assert_equal 0, @round.total_cards_per_category("POP Culture")
   end
 
-  def test_card_category
-    @round.take_turn("Juneau")
-    @round.take_turn("Mars")
-    @round.take_turn("West")
-    @round.take_turn("Indonesia")
-    @round.stubs(:card_category).returns([@card_1, @card_2, @card_3, @card_4])
-    assert_equal [@card_1, @card_2, @card_3, @card_4], @round.card_category
-  end
-
   def test_percent_correct_by_category
     @round.take_turn("Juneau")
     @round.take_turn("Mars")
