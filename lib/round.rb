@@ -1,10 +1,10 @@
 class Round
-  attr_reader :deck, :turns, :recall_deck, :total_deck
+  attr_reader :deck, :turns, :discard, :total_deck
 
   def initialize(deck)
     @deck = deck
     @turns = []
-    @recall_deck = []
+    @discard = []
   end
 
   def current_card
@@ -14,7 +14,7 @@ class Round
   def take_turn(guess)
     new_turn = Turn.new(guess, current_card)
     @turns << new_turn
-    @recall_deck << deck.cards.shift
+    @discard << deck.cards.shift
     new_turn
   end
 
@@ -46,7 +46,7 @@ class Round
   end
 
   def card_category
-    unique_cards = @recall_deck.uniq do |card|
+    unique_cards = @discard.uniq do |card|
       card.category
     end
     unique_cards.each do |card|

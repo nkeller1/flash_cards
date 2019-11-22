@@ -44,12 +44,12 @@ class RoundTest < Minitest::Test
   end
 
   def test_recall_deck_fills
-    assert_equal [], @round.recall_deck
+    assert_equal [], @round.discard
     @round.take_turn("Juneau")
     @round.take_turn("Mars")
     @round.take_turn("West")
     @round.take_turn("Indonesia")
-    assert_equal [@card_1, @card_2, @card_3, @card_4], @round.recall_deck
+    assert_equal [@card_1, @card_2, @card_3, @card_4], @round.discard
   end
 
   def test_number_correct
