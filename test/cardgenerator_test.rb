@@ -17,6 +17,6 @@ class CardGeneratorTest < Minitest::Test
   end
 
   def test_it_creates_cards
-    assert_equal 4, @cardgenerator.cards.length
+    assert_equal 8, @cardgenerator.cards.length
   end
 end

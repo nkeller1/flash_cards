@@ -11,19 +11,17 @@ require './lib/cardgenerator'
   @deck = Deck.new(
   @cards = CardGenerator.new('./data/cards.txt').cards))
 
-# issue with answers with two words. gsub probably .gsub(" ", "")
-
 def start
-  puts "-" *50
-  puts "Welcome! You're playing with #{@round.deck.cards.count} cards."
+  puts "-" *75
+  puts "Welcome to Flashcards! You're playing with #{@round.deck.cards.count} cards."
   until @round.deck.cards.empty? == true
-    puts "-" *50
-    puts "This is card number #{@round.turns.count + 1} out of 8."
-    puts "Question: #{@round.current_card.question}"
-    puts "-" *50
+    puts "-" *75
+    puts "This is card number #{@round.turns.count + 1}."
+    puts ">> Question: #{@round.current_card.question} <<"
+    puts "-" *75
     puts "Type your answer below the line:"
-    puts "-" *50
-    answer = gets.chomp.capitalize
+    puts "-" *75
+    answer = gets.chomp.upcase
     @round.take_turn(answer)
     if @round.turns.last.feedback == "Incorrect!"
       puts "#{@round.turns.last.feedback} The correct answer is: #{@round.turns.last.card.answer}"

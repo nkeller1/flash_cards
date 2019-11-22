@@ -1,9 +1,9 @@
 question,answer,category
 What is 5 + 5?,10,STEM
-What animal is human kinds best friend?,Dog,Fluffy Things
-What is the capital of Alaska?,Juneau,Geography
-What country encompasses more than 250 islands?,Indonesia,Geography
-If a Polar Bear and Grizzley Bear mate what is the name of its offspring?,Pizzy Bear,Fluffy Things
-Where would you find the Sea of Tranquility?,Moon,STEM
-Name the worlds biggest Island.,Greenland,Geography
-Where do panda's live?,China,Fluffy Things
+What animal is human kinds best friend?,DOG,Fluffy Things
+What is the capital of Alaska?,JUNEAU,Geography
+What country encompasses more than 250 islands?,INDONESIA,Geography
+If a Polar Bear and Grizzley Bear mate what is the name of its offspring?,PIZZY BEAR,Fluffy Things
+Where would you find the Sea of Tranquility?,MOON,STEM
+Name the worlds biggest Island.,GREENLAND,Geography
+Where do panda's live?,CHINA,Fluffy Things
